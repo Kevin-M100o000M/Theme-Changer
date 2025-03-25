@@ -31,6 +31,7 @@ const yellowTheme = {
 }
 const blackTheme = {
     background: 'black',
+    // color: 'black',
     circlesColor: 'white',
     buttonColor: 'white',
     image: 'images/gmod_gman.webp'
@@ -68,6 +69,19 @@ function setTheme(theme){
     button.style.backgroundColor = theme.buttonColor;
     document.body.style.backgroundImage = `url(${theme.image})`;
     document.body.classList.add('background-image');
+    if(currentIndex == 4){
+    document.getElementById("themeButton").style.color = "black";
+    document.getElementsByClassName("counter")[0].style.color = "white";
+    }
+    if(currentIndex == 5){
+    document.getElementsByClassName("themeLabel")[0].style.color = "black";
+    document.getElementsByClassName("counter")[0].style.color = "black";
+    document.getElementById("themeButton").style.color = "white";
+    }
+    else{
+    document.getElementsByClassName("themeLabel")[0].style.color = "white";
+    document.getElementsByClassName("counter")[0].style.color = "white";
+    }
 }
 
 setTheme(themes[currentIndex]);
